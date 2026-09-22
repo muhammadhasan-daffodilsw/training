@@ -5,7 +5,6 @@ const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 async function modifyDoc()
 {
 
-
     for(let i=0;i<5;i++)
     {
     document.getElementById("test").innerText=str[i];
@@ -16,7 +15,7 @@ async function modifyDoc()
 
 let externalAlert = ()=>{alert("External Alert")};
 
-const str = ['catch','me','if','you','can'];
+const str = ['one','two','three','four','five'];
 
 class User
 {
@@ -25,9 +24,10 @@ class User
         this.username=username;
         this.email=email;
     }
-
-    getEmail(){
     
+    print()
+    {
+        alert(`Hello ${user.username}`);
     }
 }
 
@@ -44,5 +44,27 @@ function test_prompts(){
     let a= prompt('Enter Two Numbers,spaced').split(' ');
     a = a.map(Number);
     alert(a[0]+a[1]);
+    let b = '6';
+    alert(5+b);
+    alert(5-b);
 
+}
+
+function test_conditions()
+{
+    (prompt('Enter A Number') % 2 == 0)? alert('Even') : alert('Odd');
+}
+
+
+
+function createUser()
+{
+    user.username = prompt("Enter a Name");
+    user.email = prompt("Enter an email");
+    user.print();
+}
+
+function showUser()
+{
+    user.print();
 }
