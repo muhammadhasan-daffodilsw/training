@@ -1,9 +1,17 @@
+const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-function modifyDoc()
+//if task cant fail u can ignore reject
+
+async function modifyDoc()
 {
-    document.getElementById("test").innerHTML=str;
+
+    for(let i=0;i<5;i++)
+    {
+    document.getElementById("test").innerText=str[i];
+    await wait(1000);
+    }
 }
 
 let externalAlert = ()=>{alert("External Alert")};
 
-let str = '<p>hello world </p>';
+let str = ['catch','me','if','you','can'];

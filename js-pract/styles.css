@@ -1,8 +1,29 @@
-.test
+body
 {
-    font-size: x-large;
+
+    background-color: rgb(43, 38, 38);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
 }
-.test::after
+
+button
 {
+    font-size: x-small;
+    border-style: solid;
+    border-radius: 1cm;
+}
+button:hover
+{
+    background-color: rgb(173, 202, 202);
+}
+
+#test
+{
+    font-size: xx-large;
     color: aqua;
 }
+
+div{
+    grid-auto-rows: auto;
+}
+
