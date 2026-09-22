@@ -1,0 +1,8 @@
+.test
+{
+    font-size: x-large;
+}
+.test::after
+{
+    color: aqua;
+}
