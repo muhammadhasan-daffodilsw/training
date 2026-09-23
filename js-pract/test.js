@@ -117,3 +117,19 @@ function findPow(x,n)
     }
     return findPow(x*x,Math.floor(n/2));
 }
+
+function sumInput()
+{
+    let a = [];
+    let i;
+    let con = true;
+
+    while (con)
+    {
+        value = prompt('Enter A Number');
+        if (value === "" || value === null || !isFinite(value)) break;
+        a.push(+value);
+    }
+
+    console.log(a.toString);
+}
