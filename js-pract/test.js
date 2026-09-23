@@ -5,10 +5,28 @@ const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 async function modifyDoc()
 {
 
-    for(let i=0;i<5;i++)
+    /*
+    for(item of str)
     {
-    document.getElementById("test").innerText=str[i];
-    await wait(1000);
+    document.getElementById("test").innerHTML=item;
+    await wait(500);
+    }
+    */
+    let limit = +prompt("Count Till?",0);
+    let i = 0;
+    while (i<limit)
+    {
+
+        if (i%2 == 0)
+        {
+        document.getElementById("test").innerHTML=`<b>${i}</b>`;
+        }
+        else
+        {
+        document.getElementById("test").innerHTML=`<em>${i}</em>`;
+        }
+        await wait(500);
+        i++;
     }
 }
 
@@ -67,4 +85,35 @@ function createUser()
 function showUser()
 {
     user.print();
+}
+
+function calculatePow()
+{
+    let a = prompt('Enter The Numbers spaced').split(' ').map(Number);
+    if (a.length != 2)
+    {
+        alert('Invalid input');
+    }
+
+    x = a[0];
+    y = a[1];
+    alert(findPow(x,y));
+}
+
+function findPow(x,n)
+{
+
+    if (n==1)
+    {
+        return x;
+    }
+    if (n==0)
+    {
+        return 1;
+    }
+    if (n % 2 != 0)
+    {
+        return findPow(x*x,Math.floor(n/2)) * x;
+    }
+    return findPow(x*x,Math.floor(n/2));
 }
