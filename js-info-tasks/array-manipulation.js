@@ -41,3 +41,41 @@ function sumInput()
     console.log(a.toString);
     
 }
+
+
+/*
+The input is an array of numbers, e.g. arr = [1, -2, 3, 4, -9, 6].
+
+The task is: find the contiguous subarray of arr with the maximal sum of items.
+
+Write the function getMaxSubSum(arr) that will return that sum.
+*/
+
+function getMaxSubSum(nums)
+{
+    let currMax = 0;
+    let globalMax = 0;
+    let n = nums.length;
+
+    for(let i=0;i<n;i++)
+    {
+        currMax = Math.max(currMax + nums[i],nums[i]);
+        globalMax=Math.max(currMax,globalMax);
+    }
+    return globalMax;
+
+}
+
+let res = [getMaxSubSum([-1, 2, 3, -9]) == 5 ,
+getMaxSubSum([2, -1, 2, 3, -9]) == 6,
+getMaxSubSum([-1, 2, 3, -9, 11]) == 11,
+getMaxSubSum([-2, -1, 1, 2]) == 3,
+getMaxSubSum([100, -9, 2, -3, 5]) == 100,
+getMaxSubSum([1, 2, 3]) == 6,
+getMaxSubSum([-1, -2, -3]) == 0]
+
+console.log(`getMaxSubSum Results ${res}`);
+
+res.splice(2,5,false,false,false);
+
+
