@@ -6,7 +6,7 @@ precision – the number of ms between “ticks”. Should be 1000 (1 second) by
 Your code should be in the file extended-clock.js
 Don’t modify the original clock.js. Extend it.
 */
-import Clock from './'
+import Clock from './class-task.js'
 class ExtendedClock extends Clock {
 
   constructor({ format, precision = 1000 } = {}) {

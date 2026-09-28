@@ -40,7 +40,7 @@ function Clock( { template }) {
 
   //convert to class
 
-  class Clock
+  export default class Clock
   {
     timer = null
     constructor({format})
