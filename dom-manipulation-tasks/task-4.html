@@ -1,0 +1,41 @@
+
+<!-- Create a list
+importance: 4
+
+Write an interface to create a list from user input.
+
+For every list item:
+
+    Ask a user about its content using prompt.
+    Create the <li> with it and add it to <ul>.
+    Continue until the user cancels the input (by pressing Esc or via an empty entry).
+
+All elements should be created dynamically.
+
+If a user types HTML-tags, they should be treated like a text. -->
+
+
+<body>
+
+</body>
+
+<script>
+    let a = prompt('Contents?');
+    let list = document.createElement('li');
+    list.innerText = a;
+    let item;
+    while (true)
+{
+
+    a = prompt('Item');
+    if (!a)
+{
+    break;
+}
+    item = document.createElement('ul');
+    item.innerText = a;
+    list.appendChild(item);
+}
+document.body.appendChild(list);
+
+</script>

@@ -1,0 +1,37 @@
+/*
+Make external links orange
+importance: 3
+
+Make all external links orange by altering their style property.
+
+A link is external if:
+
+    Its href has :// in it
+    But doesn’t start with http://internal.com.
+*/
+
+<a name="list">the list</a>
+<ul>
+  <li><a href="http://google.com">http://google.com</a></li>
+  <li><a href="/tutorial">/tutorial.html</a></li>
+  <li><a href="local/path">local/path</a></li>
+  <li><a href="ftp://ftp.com/my.zip">ftp://ftp.com/my.zip</a></li>
+  <li><a href="http://nodejs.org">http://nodejs.org</a></li>
+  <li><a href="http://internal.com/test">http://internal.com/test</a></li>
+</ul>
+
+<script>
+  // setting style for a single link
+  let links= document.querySelectorAll('a');
+
+  for (link of links)
+  {
+    let item = link.getAttribute('href');
+    alert(item);
+    if (!item) continue;
+    else if  (!item.includes('://')) continue;
+    else if (item.startsWith('http://internal.com]')) continue;
+    else link.style.color='orange'
+  }
+</script>
+
