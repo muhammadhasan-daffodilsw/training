@@ -1,0 +1,15 @@
+Counter: <input type="button" value="1" data-counter>
+One more counter: <input type="button" value="2" data-counter>
+
+<script>
+  document.addEventListener('click', function(event) {
+
+    let elem = document.querySelector('input');
+    console.log(elem == event.target);
+
+    if (event.target.dataset.counter != undefined) { 
+      event.target.value++;
+    }
+
+  });
+</script>
