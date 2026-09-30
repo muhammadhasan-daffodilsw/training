@@ -1,0 +1,16 @@
+
+<div oncopy="alert('Copying forbidden!');return false">
+    <button id="button">Alt+Shift+Click on me!</button>
+  Dear user,
+  The copying is forbidden for you.
+  If you know JS or HTML, then you can get everything from the page source though.
+</div>
+<script>
+  button.onclick = function(event) {
+
+    alert(event.button);
+    if (event.altKey && event.shiftKey) {
+      alert('Hooray!');
+    }
+  };
+</script>
